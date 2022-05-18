@@ -1,0 +1,31 @@
+.my-team {
+    display: flex;
+}
+.drag-row{
+    display: flex;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 15px;
+    min-width: 500px;
+    align-items: center;
+}
+.drag-item {
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 15px;
+}
+.drag-name{
+    font-size: 20px;
+}
+.drag-img {
+    width: 50px;
+    height: 50px;
+}
+.dots:hover {
+    background-color: rgba(0,0,0, .08);
+}
+.home-nav svg {
+    cursor: pointer;
+    border-radius: 15px;
+}
+.home-nav svg:hover {
+    background-color: rgba(0,0,0, .08);
+}

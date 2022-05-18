@@ -1,0 +1,38 @@
+nav {
+    /* position: absolute !important; */
+    height: 64px !important;
+    background-color: #171717;
+}
+nav svg {
+    height: 30px;
+    width: 30px;
+    color: #171717;
+    border-radius: 5px;
+}
+nav svg:hover {
+    background-color: rgba(0,0,0, .08);
+}
+#pokeball-btn{
+    position: absolute;
+    top: 8px;
+    right: 50%;
+    transform: translate(50%, 0)
+}
+#home-btn{
+    position: absolute;
+    top: 8px;
+    left: 5vw;
+}
+#auth-btn{
+    position: absolute;
+    top: 8px;
+    right: 5vw;
+}
+#nav-name{
+    min-width: 150px;
+}
+@media only screen and (max-width: 590px) {
+    #nav-name{
+        display: none;
+    }
+  }
