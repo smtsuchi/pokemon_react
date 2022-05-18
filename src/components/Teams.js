@@ -112,28 +112,25 @@ export default function Teams({ user }) {
         <GoPlus />
       </button>
 
-      {
-        Object.keys(teams).length > 0 ?
-          <DragDropContext
-            onDragEnd={({ destination, source }) => {
-              if (!destination) { return; }
-              const { reorderedMap, columnsChanged } = reorderColumnMap(teams, source, destination)
-              if (reorderedMap !== teams) {
-                setTeams(reorderedMap)
-                updateTeam(reorderedMap, columnsChanged)
-              }
-            }}
-          >
-            {Object.entries(teams).map(([teamId, team]) => <Team
-              key={`team_${team.team_id}`}
-              teamId={teamId}
-              team={team}
-              setSelectedTeam={setSelectedTeam}
-            />)}
-          </DragDropContext>
-          :
-          <h2>You have no teams. Click the + to create a Team.</h2>
-      }
+
+      <DragDropContext
+        onDragEnd={({ destination, source }) => {
+          if (!destination) { return; }
+          const { reorderedMap, columnsChanged } = reorderColumnMap(teams, source, destination)
+          if (reorderedMap !== teams) {
+            setTeams(reorderedMap)
+            updateTeam(reorderedMap, columnsChanged)
+          }
+        }}
+      >
+        {Object.entries(teams).map(([teamId, team]) => <Team
+          key={`team_${team.team_id}`}
+          teamId={teamId}
+          team={team}
+          setSelectedTeam={setSelectedTeam}
+        />)}
+      </DragDropContext>
+
 
       <div className="modal fade" id="editTeam" tabIndex="-1" aria-labelledby="editTeam" aria-hidden="true">
         <div className="modal-dialog">

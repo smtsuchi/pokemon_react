@@ -12,7 +12,7 @@ export default function Team({ setSelectedTeam, team, teamId }) {
             <div style={{ display: 'flex', flexDirection: 'row', flexGrow: 1 }} ref={dropProvided.innerRef}>
                 {team.pokemon.map((p, i) => (
                    
-                        <Draggable key={p.pokedex_id} draggableId={p.id.toString()} index={i} >
+                        <Draggable key={p.pokedex_id} draggableId={p.pokedex_id.toString()} index={i} >
                             {(dragProvided) => (
                                 <div
                                     {...dragProvided.dragHandleProps}
