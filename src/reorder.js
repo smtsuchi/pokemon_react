@@ -14,8 +14,7 @@ export const reorderColumnMap = (columnMap, source, destination) => {
     // if nothing changes
     if (source.droppableId === destination.droppableId && source.index === destination.index) {return {reorderedMap: columnMap, columnsChanged:[]};}
 
-    // TEAM IS FULL! 
-    if (next.length===5){return {reorderedMap: columnMap, columnsChanged:[]};}
+    
 
     // moving to same list
     if (source.droppableId === destination.droppableId) {
@@ -29,6 +28,9 @@ export const reorderColumnMap = (columnMap, source, destination) => {
         output.reorderedMap[source.droppableId].pokemon =  reordered
         return output
     };
+
+    // TEAM IS FULL! 
+    if (next.length===5){return {reorderedMap: columnMap, columnsChanged:[]};}
 
     current.splice(source.index, 1);
     next.splice(destination.index, 0, target);
